@@ -1,26 +1,26 @@
-# mcp-server-framework
+# mcp-server-framework Overview
 This is a project for experimenting with Model Context Protocol (MCP) server implementations. 
 
 It consists of two main phases:
 
-**Development Phase:**  
+**⚙️ Development Phase:**  
 You will create an MCP server (`weather.py`) using Python. The environment and dependencies (`mcp[cli]`, `httpx`) are managed with `uv`. The server is implemented using FastMCP.
 
-**Integration Phase:**  
+**📦 Integration Phase:**  
 You will configure Claude Desktop to connect to and launch your MCP server. This is done by editing the `claude_desktop_config.json` file, specifying how Claude Desktop should start and communicate with your MCP server.
 
 This project is guided by the [Model Context Protocol](https://modelcontextprotocol.io/docs/develop/build-server) and the source code comes from [MCP quickstart for Python](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/weather-server-python).
 
 
-## Build an MCP server
+## 🚀 Build an MCP server
 
-### Developer tools required
+### 🛠️ Developer tools required
 - macOS
 - Python 3.10 or higher
 - Python MCP SDK 1.2.0 or higher
 - Claude for Desktop
 
-### Set up environment
+### 1. Set up environment
 
 We first need to install the `uv` tool and use it as your Python environment manager.
 
@@ -34,7 +34,7 @@ uv --version
 ```
 
 
-### Initialize a new Python project with uv
+### 2. Initialize a new Python project with uv
 
 Use `uv` to create a new project named `weather`. This will initialize a `weather/` folder containing a `pyproject.toml` configuration file.
 ```bash
@@ -44,7 +44,7 @@ cd weather
 
 
 
-### Create virtual environment and activate it
+### 3. Create virtual environment and activate it
 ```bash
 uv venv
 source .venv/bin/activate
@@ -52,7 +52,7 @@ source .venv/bin/activate
 
 
 
-### Install dependencies
+### 4. Install dependencies
 
 Install the required dependencies MCP library with CLI support and automatically add them to `pyproject.toml`. Now the `weather` project includes both the MCP library and an HTTP client library.
 
@@ -60,7 +60,7 @@ Install the required dependencies MCP library with CLI support and automatically
 uv add "mcp[cli]" httpx
 ```
 
-### Create the local MCP server file
+### 5. Create the local MCP server file
 
 Create an empty MCP server file named `weather.py` in your current directory. This file will contain your MCP server logic.
 
@@ -70,7 +70,7 @@ touch weather.py
 
 Then, in the `weather.py` you need to import the necessary packages and set up the instance; add helper functions; and implement the MCP tool execution; and finally, run the server.
 
-### Configure Claude for Desktop to connect to MCP server
+### 6. Configure Claude for Desktop to connect to MCP server
 To configure Claude for Desktop to connect to your MCP server, open the configuration file located at `~/Library/Application Support/Claude/claude_desktop_config.json` in a text editor. If the file does not exist, create it. Add your MCP server details as shown below and save the file:
 
 
@@ -93,9 +93,9 @@ Remember to replace `"/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather"` with the absolut
 
 The `"uv"` value should be the absolute path to the `uv` executable on your machine. To find it, run `which uv` in your terminal.
 
-### Start the MCP server and connect from Claude
+### 7. Start the MCP server and connect from Claude
 
 After fully quitting and reopening Claude for Desktop (not just closing the chat window), you should see the weather server available and ready to connect in the MCP panel.
 
-![MCP Panel1](./weather/images/mcp_panel1.png)
-![MCP Panel2](./weather/images/mcp_panel2.png)
+![MCP Panel1](./images/mcp_panel1.png)
+![MCP Panel2](./images/mcp_panel2.png)
