@@ -28,10 +28,21 @@ Expose with ngrok (optional)
 ngrok http 8000
 ```
 
+open `http://localhost:8000/docs` or the ngrok URL in your browser to see the interactive API documentation.
+
+open browser 
+http://127.0.0.1:8000/
+ → {"message": "Hello, MCP server is running!"}
+
+http://127.0.0.1:8000/mcp/ping
+ → {"status":"ok","message":"MCP server says hello"}
+
+
 ## 📂 Project Structure
 ```
 mcp-server-framework/
 ├── server/          # Core MCP server implementation
+│   └── main.py      # Entry point for the server
 ├── client/          # Example clients for testing
 ├── docs/            # Documentation and notes
 ├── experiments/     # Prototyping different ideas
