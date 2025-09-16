@@ -9,6 +9,7 @@ mcp = FastMCP("weather")
 NWS_API_BASE = "https://api.weather.gov"
 USER_AGENT = "weather-app/1.0"
 
+# Helper functions
 async def make_nws_request(url: str) -> dict[str, Any] | None:
     """Make a request to the NWS API with proper error handling."""
     headers = {
@@ -34,6 +35,7 @@ Description: {props.get('description', 'No description available')}
 Instructions: {props.get('instruction', 'No specific instructions provided')}
 """
 
+# Implementing MCP tool execution
 @mcp.tool()
 async def get_alerts(state: str) -> str:
     """Get weather alerts for a US state.
