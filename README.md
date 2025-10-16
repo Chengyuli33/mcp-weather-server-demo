@@ -1,5 +1,6 @@
-# mcp-server-framework Overview
-This is a project for experimenting with Model Context Protocol (MCP) server implementations. 
+# MCP Weather Server Demo Overview
+
+🌦️ This project implements a lightweight Model Context Protocol (MCP) server that provides real-time weather data through the National Weather Service API. Built in Python using **FastMCP** and `httpx`, it can be locally connected to **Claude Desktop** for tool execution and context-aware interactions.
 
 It consists of two main phases:
 
